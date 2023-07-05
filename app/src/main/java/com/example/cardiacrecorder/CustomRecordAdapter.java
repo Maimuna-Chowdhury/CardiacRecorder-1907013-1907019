@@ -62,6 +62,17 @@ public class CustomRecordAdapter extends ArrayAdapter<Record> {
         t5.setText("Dyastolic Pressure:"+record.getDyastolic());
 
 
+        t6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Record data = recordList.get(position);
+                String childKey = data.getChildKey();
+                Intent intent=new Intent(context,UpdateActivity.class);
+                intent.putExtra("childKey", childKey);
+                context.startActivity(intent);
+            }
+        });
+
         t7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,6 +81,8 @@ public class CustomRecordAdapter extends ArrayAdapter<Record> {
 
             }
         });
+
+
 
 
 

@@ -77,7 +77,8 @@ public class login extends AppCompatActivity implements View.OnClickListener{
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     Toast.makeText(login.this, "Login Successful", Toast.LENGTH_SHORT).show();
-
+                    Intent intent =new Intent(getApplicationContext(),HomeActivity.class);
+                    startActivity(intent);
                     finish();
                 } else {
                     Toast.makeText(login.this, "Login Failed", Toast.LENGTH_SHORT).show();
