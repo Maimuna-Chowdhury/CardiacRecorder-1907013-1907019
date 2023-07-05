@@ -28,5 +28,6 @@
     <color name="banner_background">#FFDBAC</color>
     <color name="home_background">#EBECF0</color>
     <color name="banner_background_light">#FAE7D0</color>
+    <color name="lavender">#8692f7</color>
 
 </resources>
