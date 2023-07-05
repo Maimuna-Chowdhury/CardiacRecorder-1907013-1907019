@@ -1,20 +1,21 @@
 package com.example.cardiacrecorder;
 
 public class Record {
-    private String date,dyastolic,heart,systolic,time;
+    private String date,dyastolic,heart,systolic,time,comment;
     private String childKey;
     public Record()
     {
 
     }
 
-    public Record(String date, String dyastolic, String heart, String systolic, String time, String childKey) {
+    public Record(String date, String dyastolic, String heart, String systolic, String time, String childKey,String comment) {
         this.date = date;
         this.dyastolic = dyastolic;
         this.heart = heart;
         this.systolic = systolic;
         this.time = time;
         this.childKey = childKey;
+        this.comment=comment;
     }
 
     public String getDate() {
@@ -63,5 +64,14 @@ public class Record {
 
     public void setChildKey(String childKey) {
         this.childKey = childKey;
+    }
+
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 }

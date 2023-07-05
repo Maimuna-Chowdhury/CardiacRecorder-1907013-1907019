@@ -74,6 +74,14 @@ public class StoreRecord extends AppCompatActivity {
                             reff.child("Record").child(childKey).child("dyastolic").setValue(dyastolic);
                             reff.child("Record").child(childKey).child("childKey").setValue(childKey);
 
+                            if((Integer.parseInt(systolic)>=90&&Integer.parseInt(systolic)<=140) && (Integer.parseInt(dyastolic)<=60 && Integer.parseInt(dyastolic)<=90))
+                            {
+                                reff.child("Record").child(childKey).child("comment").setValue("Fit");
+                            }
+                            else
+                            {
+                                reff.child("Record").child(childKey).child("childKey").setValue("Pressure Not Normal");
+                            }
                             Toast.makeText(StoreRecord.this, "Successfully Added", Toast.LENGTH_SHORT).show();
                             finish();
 

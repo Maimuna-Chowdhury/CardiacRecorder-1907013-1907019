@@ -33,20 +33,6 @@ public class ShowRecords extends AppCompatActivity {
         customRecordAdapter=new CustomRecordAdapter(ShowRecords.this,recordList,reff);
 
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // Retrieve the clicked item from the adapter
-               Record clickedItem = (Record) parent.getItemAtPosition(position);
-
-                // Retrieve the key from the clicked item
-                String clickedKey = clickedItem.getChildKey();
-
-                // Use the key as needed
-
-
-            }
-        });
 
 
 
