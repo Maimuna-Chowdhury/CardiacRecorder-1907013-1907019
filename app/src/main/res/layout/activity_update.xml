@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".UpdateRecordForm">
+    android:gravity="center_horizontal"
+    tools:context=".UpdateActivity">
+
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/lightSky"
+        android:background="@color/card3"
         android:text="Update Record"
         android:fontFamily="@font/muli_extrabold"
         android:padding="20dp"
@@ -19,17 +22,15 @@
         android:textSize="20dp"
         />
 
-    <EditText
-        android:id="@+id/update_heart"
-        android:layout_width="300dp"
-        android:layout_gravity="center"
-        android:layout_height="wrap_content"
-        android:hint="HeartRate"
-        android:layout_margin="4dp"
-        android:padding="15dp"
-        android:inputType="number"
-        />
-
+   <EditText
+       android:id="@+id/update_heart"
+       android:layout_width="300dp"
+       android:layout_gravity="center"
+       android:layout_height="wrap_content"
+       android:hint="HeartRate"
+       android:layout_margin="4dp"
+       android:padding="15dp"
+       android:inputType="number"/>
     <EditText
         android:id="@+id/update_systolic"
         android:layout_width="300dp"
@@ -53,25 +54,41 @@
         />
 
     <EditText
-        android:id="@+id/update_phone"
+        android:id="@+id/update_date"
         android:layout_width="300dp"
         android:layout_gravity="center"
         android:layout_height="wrap_content"
-        android:hint="Phone No"
+        android:hint="Date"
         android:layout_margin="4dp"
         android:padding="15dp"
-        android:inputType="number"
+        android:inputType="date"
         />
+
+    <EditText
+        android:id="@+id/update_time"
+        android:layout_width="300dp"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:hint="Time"
+        android:layout_margin="4dp"
+        android:padding="15dp"
+        android:inputType="time"
+        />
+
+
 
     <Button
         android:id="@+id/update_btn"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:backgroundTint="@color/lightSky"
+        android:backgroundTint="@color/card3"
         android:textColor="@color/colorAccent"
         android:text="Update"
         android:layout_margin="10dp"
         android:textAlignment="center"
         android:layout_gravity="center"/>
+
+
+
 
 </LinearLayout>
