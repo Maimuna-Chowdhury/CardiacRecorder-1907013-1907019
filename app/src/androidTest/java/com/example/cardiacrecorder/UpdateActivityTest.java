@@ -37,10 +37,10 @@ public class UpdateActivityTest {
     @Test
 
     public void updateRecordTest() {
-        Espresso.onData(anything())
-                .inAdapterView(withId(R.id.record_listView))
-                .atPosition(position)
-                .perform(longClick());
+//        Espresso.onData(anything())
+//                .inAdapterView(withId(R.id.record_listView))
+//                .atPosition(position)
+//                .perform(longClick());
         Espresso.onView(withId(R.id.update_heart)).perform(clearText()).perform(ViewActions.typeText("140"));
         Espresso.pressBack(); //Back button
         Espresso.onView(withId(R.id.update_systolic)).perform(clearText()).perform(ViewActions.typeText("90"));

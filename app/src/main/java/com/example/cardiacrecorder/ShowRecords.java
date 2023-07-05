@@ -32,14 +32,6 @@ public class ShowRecords extends AppCompatActivity {
         reff= FirebaseDatabase.getInstance().getReference("Record");
         customRecordAdapter=new CustomRecordAdapter(ShowRecords.this,recordList,reff);
 
-
-
-
-
-
-
-
-
     }
 
     @Override
