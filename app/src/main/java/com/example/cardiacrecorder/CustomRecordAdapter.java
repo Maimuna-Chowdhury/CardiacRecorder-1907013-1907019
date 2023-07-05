@@ -132,6 +132,19 @@ public class CustomRecordAdapter extends ArrayAdapter<Record> {
         });
 
 
+    view.setOnLongClickListener(new View.OnLongClickListener() {
+        @Override
+        public boolean onLongClick(View v) {
+            Record data = recordList.get(position);
+            String childKey = data.getChildKey();
+            Intent intent=new Intent(context,UpdateActivity.class);
+            intent.putExtra("childKey", childKey);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(intent);
+            return true;
+        }
+    });
+
 
 
 
