@@ -3,6 +3,7 @@ package com.example.cardiacrecorder;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,18 +49,36 @@ public class CustomRecordAdapter extends ArrayAdapter<Record> {
         TextView t2 = view.findViewById(R.id.record_time);
         TextView t3 = view.findViewById(R.id.record_heart);
         TextView t4 = view.findViewById(R.id.record_systolic);
-        TextView t5 = view.findViewById(R.id.record_dyastolic);
+
         Button t6 = view.findViewById(R.id.record_update);
         Button t7 = view.findViewById(R.id.record_delete);
-
+        TextView t8=view.findViewById(R.id.record_comment);
+        TextView t5 = view.findViewById(R.id.record_dyastolic);
         t1.setText("Date:"+record.getDate());
         t2.setText("Time:"+record.getTime());
         t3.setText("Heartrate:"+record.getHeart());
 
 
 
-        t4.setText("Systolic Pressure:"+record.getSystolic());
-        t5.setText("Dyastolic Pressure:"+record.getDyastolic());
+
+
+
+
+        if((Integer.parseInt(record.getSystolic())>=90&&Integer.parseInt(record.getSystolic())<=140) && (Integer.parseInt(record.getDyastolic())<=60 && Integer.parseInt(record.getDyastolic())<=90))
+        {
+            t8.setText("Fit");
+            t4.setTextColor(Color.RED);
+            t5.setTextColor(Color.RED);
+            t4.setText("Systolic Pressure:"+record.getSystolic());
+            t5.setText("Dyastolic Pressure:"+record.getDyastolic());
+
+
+
+        }
+        else
+        {
+        t8.setText("Pressure Not Normal");
+        }
 
 
         t6.setOnClickListener(new View.OnClickListener() {

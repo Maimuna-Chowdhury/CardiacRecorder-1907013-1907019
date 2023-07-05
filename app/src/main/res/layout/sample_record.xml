@@ -8,7 +8,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="240dp"
+        android:layout_height="250dp"
         android:layout_margin="20dp"
         android:background="@color/mauve">
         <LinearLayout
@@ -60,6 +60,17 @@
                 android:padding="3dp"
                 android:layout_marginBottom="2dp"
                 android:id="@+id/record_dyastolic"
+                android:textColor="@color/black"
+                android:fontFamily="@font/muli_extrabold"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="plot 32"
+                android:padding="3dp"
+                android:layout_marginBottom="4dp"
+                android:id="@+id/record_comment"
                 android:textColor="@color/black"
                 android:fontFamily="@font/muli_extrabold"/>
 
