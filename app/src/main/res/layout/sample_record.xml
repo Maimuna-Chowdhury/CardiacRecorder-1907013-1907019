@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+
+    android:background="@color/lightSky">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:layout_margin="20dp"
+        android:background="@color/mauve">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@color/hospital"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/record_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="North End"
+                android:textSize="20sp"
+                android:fontFamily="@font/baloo"
+                android:padding="3dp"
+                android:textColor="@color/black"
+                />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3dp"
+                android:text="Khulna"
+                android:id="@+id/record_time"
+                android:textColor="@color/black"
+                android:fontFamily="@font/muli_extrabold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Doulotpur"
+                android:padding="3dp"
+                android:id="@+id/record_heart"
+                android:textColor="@color/black"
+                android:fontFamily="@font/muli_extrabold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="plot 32"
+                android:padding="3dp"
+                android:id="@+id/record_systolic"
+                android:textColor="@color/black"
+                android:fontFamily="@font/muli_extrabold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="plot 32"
+                android:padding="3dp"
+                android:layout_marginBottom="2dp"
+                android:id="@+id/record_dyastolic"
+                android:textColor="@color/black"
+                android:fontFamily="@font/muli_extrabold"/>
+
+
+
+
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="140dp"
+            android:orientation="vertical"
+            android:background="@color/light_blue">
+
+
+            <Button
+                android:id="@+id/record_delete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+
+                android:text="Delete"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/record_update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+
+                android:text="Update"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+</LinearLayout>
