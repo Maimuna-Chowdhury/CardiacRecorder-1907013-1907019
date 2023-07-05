@@ -8,6 +8,7 @@
     android:orientation="vertical"
     android:padding="10dp"
     android:background="@color/lightSky"
+    android:id="@+id/show"
     >
     <TextView
         android:layout_width="match_parent"
