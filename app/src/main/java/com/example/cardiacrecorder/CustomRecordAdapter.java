@@ -50,7 +50,7 @@ public class CustomRecordAdapter extends ArrayAdapter<Record> {
         TextView t3 = view.findViewById(R.id.record_heart);
         TextView t4 = view.findViewById(R.id.record_systolic);
 
-        Button t6 = view.findViewById(R.id.record_update);
+       // Button t6 = view.findViewById(R.id.record_update);
         Button t7 = view.findViewById(R.id.record_delete);
         TextView t8=view.findViewById(R.id.record_comment);
         TextView t5 = view.findViewById(R.id.record_dyastolic);
@@ -64,24 +64,54 @@ public class CustomRecordAdapter extends ArrayAdapter<Record> {
 
 
 
-        if((Integer.parseInt(record.getSystolic())>=90&&Integer.parseInt(record.getSystolic())<=140) && (Integer.parseInt(record.getDyastolic())<=60 && Integer.parseInt(record.getDyastolic())<=90))
+        if(Integer.parseInt(record.getSystolic())>=90&&Integer.parseInt(record.getSystolic())<=140) {
+            if (Integer.parseInt(record.getDyastolic()) <= 60 && Integer.parseInt(record.getDyastolic()) >= 90)
+            {
+                t8.setText("Fit");
+            t4.setText("Systolic Pressure:" + record.getSystolic());
+            t5.setText("Dyastolic Pressure:" + record.getDyastolic());
+        }
+            else
+            {
+                t8.setText("Pressure Not Normal");
+                t4.setTextColor(Color.RED);
+                t5.setTextColor(Color.RED);
+                t4.setText("Systolic Pressure:" + record.getSystolic());
+                t5.setText("Dyastolic Pressure:" + record.getDyastolic());
+            }
+
+
+
+        }
+        else if(Integer.parseInt(record.getDyastolic()) <= 60 && Integer.parseInt(record.getDyastolic()) >= 90)
         {
-            t8.setText("Fit");
-            t4.setTextColor(Color.RED);
-            t5.setTextColor(Color.RED);
-            t4.setText("Systolic Pressure:"+record.getSystolic());
-            t5.setText("Dyastolic Pressure:"+record.getDyastolic());
-
-
-
+            if(Integer.parseInt(record.getSystolic())>=90&&Integer.parseInt(record.getSystolic())<=140)
+            {
+                t8.setText("Fit");
+                t4.setText("Systolic Pressure:" + record.getSystolic());
+                t5.setText("Dyastolic Pressure:" + record.getDyastolic());
+            }
+            else
+            {
+                t8.setText("Pressure Not Normal");
+                t4.setTextColor(Color.RED);
+                t5.setTextColor(Color.RED);
+                t4.setText("Systolic Pressure:" + record.getSystolic());
+                t5.setText("Dyastolic Pressure:" + record.getDyastolic());
+            }
         }
         else
         {
-        t8.setText("Pressure Not Normal");
+            t8.setText("Pressure Not Normal");
+            t4.setTextColor(Color.RED);
+            t5.setTextColor(Color.RED);
+            t4.setText("Systolic Pressure:" + record.getSystolic());
+            t5.setText("Dyastolic Pressure:" + record.getDyastolic());
         }
 
 
-        t6.setOnClickListener(new View.OnClickListener() {
+
+        /*t6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Record data = recordList.get(position);
@@ -90,7 +120,7 @@ public class CustomRecordAdapter extends ArrayAdapter<Record> {
                 intent.putExtra("childKey", childKey);
                 context.startActivity(intent);
             }
-        });
+        });*/
 
         t7.setOnClickListener(new View.OnClickListener() {
             @Override
