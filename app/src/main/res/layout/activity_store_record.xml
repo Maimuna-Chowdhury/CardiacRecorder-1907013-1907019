@@ -13,7 +13,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/card3"
+        android:background="@color/lavender"
         android:text="Store Record"
         android:fontFamily="@font/muli_extrabold"
         android:padding="20dp"
@@ -82,7 +82,7 @@
         android:id="@+id/store_btn"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:backgroundTint="@color/card3"
+        android:backgroundTint="@color/lavender"
         android:textColor="@color/colorAccent"
         android:text="Store"
         android:layout_margin="10dp"

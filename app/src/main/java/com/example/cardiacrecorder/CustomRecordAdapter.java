@@ -43,75 +43,38 @@ public class CustomRecordAdapter extends ArrayAdapter<Record> {
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater layoutInflater = context.getLayoutInflater();
         View view = layoutInflater.inflate(R.layout.sample_record, null, true);
-        View view1 = layoutInflater.inflate(R.layout.activity_show_records, null, true);
         Record record = recordList.get(position);
         TextView t1 = view.findViewById(R.id.record_date);
         TextView t2 = view.findViewById(R.id.record_time);
         TextView t3 = view.findViewById(R.id.record_heart);
         TextView t4 = view.findViewById(R.id.record_systolic);
 
-       // Button t6 = view.findViewById(R.id.record_update);
+       Button t6 = view.findViewById(R.id.record_update);
         Button t7 = view.findViewById(R.id.record_delete);
+
         TextView t8=view.findViewById(R.id.record_comment);
         TextView t5 = view.findViewById(R.id.record_dyastolic);
         t1.setText("Date:"+record.getDate());
         t2.setText("Time:"+record.getTime());
         t3.setText("Heartrate:"+record.getHeart());
+        t4.setText("Systolic Pressure:" + record.getSystolic());
+        t5.setText("Dyastolic Pressure:" + record.getDyastolic());
+        t8.setText("Fit");
 
-
-
-
-
-
-
-        if(Integer.parseInt(record.getSystolic())>=90&&Integer.parseInt(record.getSystolic())<=140) {
-            if (Integer.parseInt(record.getDyastolic()) <= 60 && Integer.parseInt(record.getDyastolic()) >= 90)
-            {
-                t8.setText("Fit");
-            t4.setText("Systolic Pressure:" + record.getSystolic());
-            t5.setText("Dyastolic Pressure:" + record.getDyastolic());
-        }
-            else
-            {
-                t8.setText("Pressure Not Normal");
-                t4.setTextColor(Color.RED);
-                t5.setTextColor(Color.RED);
-                t4.setText("Systolic Pressure:" + record.getSystolic());
-                t5.setText("Dyastolic Pressure:" + record.getDyastolic());
+        t7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                deleteItem(position);
             }
+        });
 
 
 
-        }
-        else if(Integer.parseInt(record.getDyastolic()) <= 60 && Integer.parseInt(record.getDyastolic()) >= 90)
-        {
-            if(Integer.parseInt(record.getSystolic())>=90&&Integer.parseInt(record.getSystolic())<=140)
-            {
-                t8.setText("Fit");
-                t4.setText("Systolic Pressure:" + record.getSystolic());
-                t5.setText("Dyastolic Pressure:" + record.getDyastolic());
-            }
-            else
-            {
-                t8.setText("Pressure Not Normal");
-                t4.setTextColor(Color.RED);
-                t5.setTextColor(Color.RED);
-                t4.setText("Systolic Pressure:" + record.getSystolic());
-                t5.setText("Dyastolic Pressure:" + record.getDyastolic());
-            }
-        }
-        else
-        {
-            t8.setText("Pressure Not Normal");
-            t4.setTextColor(Color.RED);
-            t5.setTextColor(Color.RED);
-            t4.setText("Systolic Pressure:" + record.getSystolic());
-            t5.setText("Dyastolic Pressure:" + record.getDyastolic());
-        }
 
 
 
-        /*t6.setOnClickListener(new View.OnClickListener() {
+
+      t6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Record data = recordList.get(position);
@@ -120,30 +83,12 @@ public class CustomRecordAdapter extends ArrayAdapter<Record> {
                 intent.putExtra("childKey", childKey);
                 context.startActivity(intent);
             }
-        });*/
-
-        t7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                deleteItem(position);
-
-            }
         });
 
 
-    view.setOnLongClickListener(new View.OnLongClickListener() {
-        @Override
-        public boolean onLongClick(View v) {
-            Record data = recordList.get(position);
-            String childKey = data.getChildKey();
-            Intent intent=new Intent(context,UpdateActivity.class);
-            intent.putExtra("childKey", childKey);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            context.startActivity(intent);
-            return true;
-        }
-    });
+
+
+
 
 
 
@@ -158,7 +103,24 @@ public class CustomRecordAdapter extends ArrayAdapter<Record> {
         String childKey = data.getChildKey();
 
         DatabaseReference nodeRef = databaseRef.child(childKey);
-        nodeRef.removeValue();
+        nodeRef.removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(task.isSuccessful())
+                {
+                    recordList.remove(position);
+                    notifyDataSetChanged();
+                }
+                else
+                {
+                    Toast.makeText(context, "Unsuccessful", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+
         return;
+
+
     }
 }

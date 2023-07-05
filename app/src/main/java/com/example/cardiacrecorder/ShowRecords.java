@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.example.cardiacrecorder.databinding.ActivityMainBinding;
+import com.google.android.material.progressindicator.BaseProgressIndicator;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -24,6 +26,7 @@ public class ShowRecords extends AppCompatActivity {
     DatabaseReference reff;
     private List<Record>recordList;
     private CustomRecordAdapter customRecordAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +35,8 @@ public class ShowRecords extends AppCompatActivity {
         recordList=new ArrayList<>();
         reff= FirebaseDatabase.getInstance().getReference("Record");
         customRecordAdapter=new CustomRecordAdapter(ShowRecords.this,recordList,reff);
+
+
 
 
 
