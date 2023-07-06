@@ -80,7 +80,7 @@ public class StoreRecord extends AppCompatActivity {
                             }
                             else
                             {
-                                reff.child("Record").child(childKey).child("childKey").setValue("Pressure Not Normal");
+                                reff.child("Record").child(childKey).child("comment").setValue("Pressure Not Normal");
                             }
                             Toast.makeText(StoreRecord.this, "Successfully Added", Toast.LENGTH_SHORT).show();
                             finish();

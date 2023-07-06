@@ -4,9 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".HomeActivity"
+    android:orientation="vertical"
+    android:background="@color/lightSky"
+    android:gravity="center_horizontal"
     android:id="@+id/home"
-    tools:context=".HomeActivity">
+    >
 
+<<<<<<< HEAD
+
+
+=======
+
+
+
+>>>>>>> da7a9f367313ebb2a9b54d7ae828dde171fa3adb
 
     <ImageView
         android:layout_width="200dp"
