@@ -74,13 +74,13 @@ public class StoreRecord extends AppCompatActivity {
                             reff.child("Record").child(childKey).child("dyastolic").setValue(dyastolic);
                             reff.child("Record").child(childKey).child("childKey").setValue(childKey);
 
-                            if((Integer.parseInt(systolic)>=90&&Integer.parseInt(systolic)<=140) && (Integer.parseInt(dyastolic)<=60 && Integer.parseInt(dyastolic)<=90))
+                            if((Integer.parseInt(systolic)>=90&&Integer.parseInt(systolic)<=140) && (Integer.parseInt(dyastolic)>=60 && Integer.parseInt(dyastolic)<=90))
                             {
-                                reff.child("Record").child(childKey).child("comment").setValue("Fit");
+                                reff.child("Record").child(childKey).child("comment").setValue("Healthy");
                             }
                             else
                             {
-                                reff.child("Record").child(childKey).child("comment").setValue("Pressure Not Normal");
+                                reff.child("Record").child(childKey).child("comment").setValue("Unhealthy");
                             }
                             Toast.makeText(StoreRecord.this, "Successfully Added", Toast.LENGTH_SHORT).show();
                             finish();
