@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.example.cardiacrecorder.databinding.ActivityMainBinding;
+
 import com.google.android.material.progressindicator.BaseProgressIndicator;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

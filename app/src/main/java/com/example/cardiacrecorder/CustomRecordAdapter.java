@@ -59,7 +59,7 @@ public class CustomRecordAdapter extends ArrayAdapter<Record> {
         t3.setText("Heartrate:"+record.getHeart());
         t4.setText("Systolic Pressure:" + record.getSystolic());
         t5.setText("Dyastolic Pressure:" + record.getDyastolic());
-        t8.setText("Fit");
+        t8.setText(record.getComment());
 
         t7.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,7 +103,8 @@ public class CustomRecordAdapter extends ArrayAdapter<Record> {
         String childKey = data.getChildKey();
 
         DatabaseReference nodeRef = databaseRef.child(childKey);
-        nodeRef.removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+        nodeRef.removeValue();
+        /*nodeRef.removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful())
@@ -116,7 +117,7 @@ public class CustomRecordAdapter extends ArrayAdapter<Record> {
                     Toast.makeText(context, "Unsuccessful", Toast.LENGTH_SHORT).show();
                 }
             }
-        });
+        });*/
 
 
         return;
