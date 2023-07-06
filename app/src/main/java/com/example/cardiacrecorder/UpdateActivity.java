@@ -81,6 +81,15 @@ public class UpdateActivity extends AppCompatActivity {
                 reff.child("Record").child(childKey).child("date").setValue(updatedDate);
                 reff.child("Record").child(childKey).child("time").setValue( updatedTime);
 
+                if((Integer.parseInt(updatedSys)>=90&&Integer.parseInt(updatedSys)<=140) && (Integer.parseInt(updatedDya)>=60 && Integer.parseInt(updatedDya)<=90))
+                {
+                    reff.child("Record").child(childKey).child("comment").setValue("Healthy");
+                }
+                else
+                {
+                    reff.child("Record").child(childKey).child("comment").setValue("Unhealthy");
+                }
+
                 Toast.makeText(UpdateActivity.this, "Record Updated Successfully", Toast.LENGTH_SHORT).show();
                 finish();
             }
