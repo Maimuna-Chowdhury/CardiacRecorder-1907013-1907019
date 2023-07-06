@@ -18,6 +18,20 @@
             </AndroidTestResultsTableState>
           </value>
         </entry>
+        <entry key="-2052600807">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="31d505028807" value="120" />
+                  <entry key="Duration" value="90" />
+                  <entry key="Tests" value="360" />
+                  <entry key="Xiaomi&#10; Mi A3" value="120" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
         <entry key="-261006046">
           <value>
             <AndroidTestResultsTableState>
@@ -37,9 +51,11 @@
             <AndroidTestResultsTableState>
               <option name="preferredColumnWidths">
                 <map>
+                  <entry key="31d505028807" value="120" />
                   <entry key="Duration" value="90" />
                   <entry key="Pixel_2_API_30" value="120" />
                   <entry key="Tests" value="360" />
+                  <entry key="Xiaomi&#10; Mi A3" value="120" />
                 </map>
               </option>
             </AndroidTestResultsTableState>
@@ -76,16 +92,32 @@
             </AndroidTestResultsTableState>
           </value>
         </entry>
+        <entry key="405987241">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="31d505028807" value="120" />
+                  <entry key="Duration" value="90" />
+                  <entry key="Tests" value="360" />
+                  <entry key="Xiaomi&#10; Mi A3" value="120" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
         <entry key="573942913">
           <value>
             <AndroidTestResultsTableState>
               <option name="preferredColumnWidths">
                 <map>
+                  <entry key="31d505028807" value="120" />
                   <entry key="330076675f78b485" value="120" />
                   <entry key="Duration" value="90" />
                   <entry key="Pixel_2_API_30" value="120" />
                   <entry key="Pixel_2_API_30_2" value="120" />
                   <entry key="Tests" value="360" />
+                  <entry key="Xiaomi&#10; Mi A3" value="120" />
                   <entry key="samsung" value="120" />
                   <entry key="samsung&#10; SM-G611F" value="120" />
                 </map>

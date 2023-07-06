@@ -6,6 +6,10 @@ import java.util.List;
 public class RecordList {
     private List<Record> records=new ArrayList<>();
 
+    /**
+     *
+     * @param record adds new record
+     */
     public void add(Record record)
     {
         if(records.contains(record))
@@ -21,6 +25,10 @@ public class RecordList {
         return recordList;
     }
 
+    /**
+     *
+     * @param record deletes a record
+     */
     public void delete(Record record)
     {
         if(!records.contains(record))
@@ -33,11 +41,21 @@ public class RecordList {
         }
     }
 
+    /**
+     * returns total count
+     * @return
+     */
 
     public int count()
     {
         return records.size();
     }
+
+    /**
+     * updates a record
+     * @param pos
+     * @param record
+     */
 
     public void update(int pos, Record record)
     {
