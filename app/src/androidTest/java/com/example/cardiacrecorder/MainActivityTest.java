@@ -25,7 +25,7 @@ import org.junit.runner.RunWith;
 
 public class MainActivityTest {
     @Rule
-    public ActivityScenarioRule<MainActivity> activityRule = new ActivityScenarioRule<>(MainActivity.class);
+    public ActivityScenarioRule<LoginorSignup> activityRule = new ActivityScenarioRule<>(LoginorSignup.class);
     @Test
     public void maintest() {
         onView(withId(R.id.signUp)).check(matches(isDisplayed()));//for checking the signUp button

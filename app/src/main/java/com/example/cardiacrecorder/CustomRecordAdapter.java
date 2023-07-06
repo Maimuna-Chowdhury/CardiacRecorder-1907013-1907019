@@ -59,7 +59,20 @@ public class CustomRecordAdapter extends ArrayAdapter<Record> {
         t3.setText("Heartrate:"+record.getHeart());
         t4.setText("Systolic Pressure:" + record.getSystolic());
         t5.setText("Dyastolic Pressure:" + record.getDyastolic());
-        t8.setText(record.getComment());
+
+        if(record.getComment()=="Healthy")
+        {
+            t8.setTextColor(Color.GREEN);
+            t8.setText(record.getComment());
+
+        }
+        if(record.getComment()=="Unhealthy")
+        {
+            t8.setTextColor(Color.RED);
+            t8.setText(record.getComment());
+        }
+
+
 
         t7.setOnClickListener(new View.OnClickListener() {
             @Override
