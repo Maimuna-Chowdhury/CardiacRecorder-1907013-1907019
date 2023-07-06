@@ -32,7 +32,7 @@ public class MainActivityTest {
         onView(withId(R.id.signUp)).perform(click());
         onView(withId(R.id.signup)).check(matches(isDisplayed()));
         Espresso.pressBack();
-        onView(withId(R.id.signIn)).check(matches(isDisplayed()));
+        onView(withId(R.id.signIn)).check(matches(isDisplayed()));//check if signin button is displayed
         onView(withId(R.id.signIn)).perform(click());
         onView(withId(R.id.login)).check(matches(isDisplayed()));
         onView(withId(R.id.login_email)).perform(typeText("disha@gmail.com"));

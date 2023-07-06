@@ -5,25 +5,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity{
+public class SplashScreen extends AppCompatActivity {
     private static int SPLASH_TIMER=5000;
 
     ImageView splashImg;
     TextView splashText;
 
     Animation sideAnim,bottomAnim;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_splash_screen);
 
         splashImg=findViewById(R.id.splash_img);
         splashText=findViewById(R.id.splash_text);
@@ -34,18 +31,15 @@ public class MainActivity extends AppCompatActivity{
 
         splashImg.setAnimation(sideAnim);
         splashText.setAnimation(bottomAnim);
+
+
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(getApplicationContext(),LoginorSignup.class));
+              startActivity(new Intent(getApplicationContext(),MainActivity.class));
             }
         },SPLASH_TIMER);
 
-
-
     }
-
-
-
-
-    }
+}
